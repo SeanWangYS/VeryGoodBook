@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+body{
+    background-color: #ddd;
+    font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
+}
+.article{width: 85%;min-width: 400px;min-height:85vh;margin:auto}
+
+.article input{font-size: 1.6ex}
+
+.footer{text-align:center}

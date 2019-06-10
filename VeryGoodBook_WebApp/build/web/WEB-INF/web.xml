@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xml鐵律 : xml的宣告-->
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>CaptchaServlet</servlet-name>
+        <servlet-class>uuu.vgb.view.CaptchaServlet</servlet-class>
+        <init-param>
+            <param-name>len</param-name>
+            <param-value>4</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <jsp-file>/mod12/hello.jsp</jsp-file>
+        <init-param>
+            <param-name>welcome</param-name>
+            <param-value>您好!!!!!</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CaptchaServlet</servlet-name>
+        <url-pattern>/images/captcha.jpeg</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RegisterCaptchaServlet</servlet-name>
+        <servlet-class>uuu.vgb.view.CaptchaServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterCaptchaServlet</servlet-name>
+        <url-pattern>/images/register_captcha.jpeg</url-pattern>
+        <url-pattern>/images/register_captcha.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/mod12/hello.asp</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/error.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/WEB-INF/error.jsp</location>
+    </error-page>
+</web-app>
+<!--xml鐵律 : 有根標籤-->
+<!--xml就是設定檔，效果等同於annotation-->
+<!--目的就是去讓server去建servlet物件-->
+<!--xml裡  不要亂打空白 或注意全形空白的問題-->
+<!---->
